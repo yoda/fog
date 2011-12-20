@@ -11,7 +11,7 @@ module Fog
         undef_method :create
 
         def all
-          data = connection.login.body[:Org].select { |org| org[:type] == "application/vnd.vmware.vcloud.org+xml" }
+          data = connection.login.body[:Org]
           data.each { |org| org.delete_if { |key, value| [:rel].include?(key) } }
           load(data)
         end

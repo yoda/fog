@@ -296,7 +296,6 @@ module Fog
           })
 
           # Parse the response body into a hash
-          #puts response.body
           unless response.body.empty?
             if params[:parse]
               document = Fog::ToHashDocument.new
